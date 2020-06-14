@@ -9,44 +9,20 @@
 		       Email => "",
 		       HomePage => ""}},
              Headline => "Package for working with hypergraphs",
-             DebuggingMode => false
+             DebuggingMode => true
              )
 
-     export {}
+needs "./core/main.m2"
+needs "./tests/tests.m2"
 
-     -- Code here
+beginDocumentation()
 
-     beginDocumentation()
-
-     doc ///
+doc ///
      Key
        Hypergraphs
      Headline
+       Package for hypergraph ideals
      Description
        Text
-       Example
-     Caveat
-     SeeAlso
-     ///
-
-     doc ///
-     Key
-     Headline
-     Usage
-     Inputs
-     Outputs
-     Consequences
-     Description
-       Text
-       Example
-       Code
-       Pre
-     Caveat
-     SeeAlso
-     ///
-
-     TEST ///
-     -- test code and assertions here
-     -- may have as many TEST sections as needed
-     ///
-
+         A hypergraph is a generalisation of a graph whose edges are subsets of vertices of arbitrary size.
+///
