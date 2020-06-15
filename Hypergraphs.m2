@@ -6,7 +6,7 @@
                        Email => "oliver.clarke@bristol.ac.uk", 
                        HomePage => ""},
 		   {Name => "Harshit J. Motwani",
-		       Email => "",
+		       Email => "harshitmotwani2015@gmail.com",
 		       HomePage => ""}},
              Headline => "Package for working with hypergraphs",
              DebuggingMode => true
