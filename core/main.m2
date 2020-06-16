@@ -107,6 +107,11 @@ detIdeal(Hypergraph, ZZ, Ring) := (H, d, R) -> ( --Hypergraph ideal in with d ro
 	)
     )
 
+detIdeal(Hypergraph, Ring) := (H, R) -> (
+    d := max for e in edges H list #e;
+    detIdeal(H, d, R)
+    )
+
 detIdeal(Hypergraph, ZZ) := (H, d) -> (
     x := symbol x;
     V := #(vertices H);

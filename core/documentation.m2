@@ -61,7 +61,7 @@ doc ///
     H: Hypergraph
   Outputs
     E: List
-      edges of the hypergraph
+      edges of the hypergraph $H$
   Description
     Example
       H = hypergraph {{1,2}, {4,5,6}};
@@ -72,3 +72,76 @@ doc ///
     (inducedSubgraph, Hypergraph, List)
     (detIdeal, Hypergraph)
 ///
+
+
+doc ///
+  Key
+    vertices
+    (vertices, Hypergraph)
+  Headline
+    vertices of a Hypergraph
+  Usage
+    V = vertices H
+  Inputs
+    H: Hypergraph
+  Outputs
+    V: List
+      vertices of the hypergraph $H$
+  Description
+    Example
+      H1 = hypergraph {{1,2}, {4,5,6}};
+      vertices H1
+      H2 = hypergraph({{1,2},{4,5,6}}, 8);
+      vertices H2
+  SeeAlso
+    (hypergraph, List)
+    (edges, Hypergraph)
+    (inducedSubgraph, Hypergraph, List)
+    (detIdeal, Hypergraph)
+///
+
+
+doc ///
+  Key
+    inducedSubgraph
+    (inducedSubgraph, Hypergraph, List)
+  Headline
+    induced subgraph of a Hypergraph
+  Usage
+    H = inducedSubgraph(G, V)
+  Inputs
+    G: Hypergraph
+    V: List
+      vertices of the induced subgraph
+  Outputs
+    H: Hypergraph
+      hypergraph on the same vertex set as $G$ with edges that are subsets of $V$
+  Description
+    Text
+      The hypergraph ${\tt inducedSubgraph}(G, V)$ is the hypergraph on the same
+      vertex set as $G$ with and whose edges are the edges of $G$ which are
+      contained in $V$.
+    Example
+      G = hypergraph {{0,1},{0,2},{0,3},{1,2},{1,3,4},{1,4,5}};
+      V = {0,1,2,4,5};
+      H = inducedSubgraph(G, V);
+      vertices H == vertices G
+      edges H
+    Text
+      Note that by default the detIdeal of $G$ and $H$ live in different rings.
+      To define these ideals in the same ring, one can pass the desired ring into
+      the function ${\tt detIdeal}$.
+    Example
+      IG = detIdeal G;
+      R = ring IG;
+      IH = detIdeal(H, R);
+  SeeAlso
+    (hypergraph, List)
+    (edges, Hypergraph)
+    (vertices, Hypergraph)
+    (detIdeal, Hypergraph)
+///
+
+
+
+
