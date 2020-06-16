@@ -1,9 +1,18 @@
 uninstallPackage "Hypergraphs"
 restart
-needs "Hypergraphs.m2"
 
+pathToPackage = "./Hypergraphs.m2"
+installPackage(
+    "Hypergraphs",
+    FileName=>pathToPackage,
+    RemakeAllDocumentation => not instance(newDoc, Symbol),
+    RerunExamples => true
+    )
+check "Hypergraphs"
 
 end --
+
+help hypergraph
 
 -- testing
 H1 = hypergraph {{3,4},{1,2,3},{1,2,4},{3,5,6},{4,5,6}};

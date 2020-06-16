@@ -17,12 +17,5 @@ needs "./tests/tests.m2"
 
 beginDocumentation()
 
-doc ///
-     Key
-       Hypergraphs
-     Headline
-       Package for hypergraph ideals
-     Description
-       Text
-         A hypergraph is a generalisation of a graph whose edges are subsets of vertices of arbitrary size.
-///
+needs "./core/documentation.m2"
+

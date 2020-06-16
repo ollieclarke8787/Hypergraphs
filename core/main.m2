@@ -24,16 +24,17 @@ hypergraph (List, Sequence) := (E, V) -> (
     hypergraph(E, toList V)
     )
 hypergraph (List, ZZ) := (E, n) -> ( -- edge on vertices 0 .. n
-    maxVal := max flatten E;
     hypergraph(E, 0 .. n)
     )
 hypergraph List := E -> ( -- edge on vertices 0 .. n where n is the max val of edges
     maxVal := max flatten E;
-    hypergraph(E, 0 .. maxVal)
+    hypergraph(E, maxVal)
     )
 
+-- visual
+net Hypergraph := H -> "Hypergraph: Edges " | (net edges H) | ", Vertices " | (net vertices H)
 
--- Properties --
+-- Properties
 edges = method()
 edges Hypergraph := H -> H#"Edges"
 
